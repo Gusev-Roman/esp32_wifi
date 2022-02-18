@@ -12,6 +12,7 @@
 
 #include "lwip/err.h"
 #include "lwip/sys.h"
+#include "task1_blink.h"
 
 #define DEFAULT_SCAN_METHOD WIFI_ALL_CHANNEL_SCAN
 /* Не должно быть предопределенных сетей и паролей. Вместо этого нужно искать сохраненные в EEPROM сети,
@@ -50,7 +51,7 @@ static const char *TAG = "wifi station";
 
 static int s_retry_num = 0;
 
-void TaskBlink1(void *pvParameters) 
+/* void TaskBlink1(void *pvParameters) 
 {
     //pinMode(LED, OUTPUT);
     gpio_set_direction(LED, GPIO_MODE_DEF_OUTPUT);
@@ -63,7 +64,7 @@ void TaskBlink1(void *pvParameters)
         gpio_set_level(LED, 0);
         vTaskDelay( 200 / portTICK_PERIOD_MS ); 
     }
-}
+} */
 
 static void event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data)
 {
